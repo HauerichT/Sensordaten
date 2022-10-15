@@ -16,34 +16,34 @@ public class Main {
 
         int ausgabe = 0; // Variable zum Speichern der Ausgabe
 
-        // Wird ausgeführt bis die Folge 1,1,1 eingegeben wird
+        // wird ausgeführt bis die Folge 1,1,1 eingegeben wird
         while (einsCounter < 3) {
-            letzteEingabe = eingabeWert; // Speichert letzte Eingabe
-            letztenZweiWerte = ausgabe % 10; // Speichert letzten zwei Stellen der Ausgabe
+            letzteEingabe = eingabeWert; // speichert letzte Eingabe
+            letztenZweiWerte = ausgabe % 10; // speichert letzten zwei Stellen der Ausgabe
 
             eingabeWert = sc.nextInt(); // Abfrage der Eingabe
 
             // Steuerung der Endbedingung bis Eingabe 1,1,1
             if (eingabeWert == 1) {
-                einsCounter = einsCounter + 1; // Erhöht den einsCounter um eins
+                einsCounter = einsCounter + 1; // erhöht den einsCounter um eins
             }
             else {
                 einsCounter = 0; // einsCounter wird wieder auf 0 gesetzt, wenn Eingabe keine 1
             }
 
-            // Filtert die eingegebenen Werte und fügt diese zur Ausgabe hinzu
-            if (eingabeWert < -9 || eingabeWert > 9) { // Prüft ob Eingabe eine einstellige Zahl ist
+            // filtert die eingegebenen Werte und fügt diese zur Ausgabe hinzu
+            if (eingabeWert < -9 || eingabeWert > 9) { // prüft ob Eingabe eine einstellige Zahl ist
                 System.out.println("Bitte ganze einstellige Zahl zwischen -9 und 9 eingeben!");
             }
             else if (eingabeWert < 0) {
-                eingabeWert = eingabeWert * -1; // Berechnet den Betrag negativer Zahlen
-                ausgabe = ausgabe * 10 + eingabeWert; // Fügt den Eingabewert zur Ausgabe hinzu
+                eingabeWert = eingabeWert * -1; // berechnet den Betrag negativer Zahlen
+                ausgabe = ausgabe * 10 + eingabeWert; // fügt den Eingabewert zur Ausgabe hinzu
             }
-            else if (eingabeWert == 0 && (letzteEingabe != 0 && letztenZweiWerte != 0)) { // Fasst aufeinander folgende Nullen zusammen
-                ausgabe = ausgabe * 10 + eingabeWert; // Fügt den Eingabewert zur Ausgabe hinzu
+            else if (eingabeWert == 0 && (letzteEingabe != 0 && letztenZweiWerte != 0)) { // fasst aufeinander folgende Nullen zusammen
+                ausgabe = ausgabe * 10 + eingabeWert; // fügt den Eingabewert zur Ausgabe hinzu
             }
 
-            System.out.println("Output: " + ausgabe); // Gibt die Ausgabe nach jeder Eingabe aus
+            System.out.println("Output: " + ausgabe); // gibt die Ausgabe nach jeder Eingabe aus
         }
 
         // Ausgabe der gefilterten Werte nach Erfüllung der Endbedingung
@@ -55,6 +55,6 @@ public class Main {
 
 
     public static void main(String[] args) {
-        filterMesswerte(); // Ruft Methode filterMesswerte auf
+        filterMesswerte(); // ruft Methode filterMesswerte auf
     }
 }
