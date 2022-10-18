@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Main {
+public class Sensordaten {
 
     // Methode zum Filtern der eingegebenen Messwerte
     static void filterMesswerte() {
