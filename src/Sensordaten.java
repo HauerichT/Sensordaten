@@ -38,12 +38,14 @@ public class Sensordaten {
             else if (eingabeWert < 0) {
                 eingabeWert = eingabeWert * -1; // berechnet den Betrag negativer Zahlen
                 ausgabe = ausgabe * 10 + eingabeWert; // fügt den Eingabewert zur Ausgabe hinzu
+                System.out.println("Output: " + ausgabe); // gibt die Ausgabe nach jeder Eingabe aus
+
             }
             else if (eingabeWert == 0 && (letzteEingabe != 0 && letztenZweiWerte != 0)) { // fasst aufeinander folgende Nullen zusammen
                 ausgabe = ausgabe * 10 + eingabeWert; // fügt den Eingabewert zur Ausgabe hinzu
+                System.out.println("Output: " + ausgabe); // gibt die Ausgabe nach jeder Eingabe aus
             }
 
-            System.out.println("Output: " + ausgabe); // gibt die Ausgabe nach jeder Eingabe aus
         }
 
         // Ausgabe der gefilterten Werte nach Erfüllung der Endbedingung
