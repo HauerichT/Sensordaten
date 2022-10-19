@@ -11,10 +11,10 @@ public class Sensordaten {
 
         int einsCounter = 0; // Variable zum Checken der Endbedingung
         int eingabeWert = 0; // Variable zum Speichern der aktuellen Eingabe
+        int ausgabe = 0; // Variable zum Speichern der Ausgabe
         int letzteEingabe = 0; // Variable zum Speichern der letzten Eingabe
         int letztenZweiWerte = 0; // Variable zum Speichern der letzten zwei Werte
 
-        int ausgabe = 0; // Variable zum Speichern der Ausgabe
 
         // wird ausgeführt bis die Folge 1,1,1 eingegeben wird
         while (einsCounter < 3) {
@@ -25,24 +25,31 @@ public class Sensordaten {
 
             // Steuerung der Endbedingung bis Eingabe 1,1,1
             if (eingabeWert == 1) {
-                einsCounter = einsCounter + 1; // erhöht den einsCounter um eins
+                einsCounter++; // erhöht den einsCounter um eins
             }
             else {
                 einsCounter = 0; // einsCounter wird wieder auf 0 gesetzt, wenn Eingabe keine 1
             }
 
-            // filtert die eingegebenen Werte und fügt diese zur Ausgabe hinzu
+            // Prüft, ob die Eingabe nicht valide ist und wirft einen Fehler
             if (eingabeWert < -9 || eingabeWert > 9) { // prüft ob Eingabe eine einstellige Zahl ist
-                System.out.println("Bitte ganze einstellige Zahl zwischen -9 und 9 eingeben!");
+                System.err.println("Bitte ganze einstellige Zahl zwischen -9 und 9 eingeben!");
+                eingabeWert = sc.nextInt();
             }
-            else if (eingabeWert < 0) {
-                eingabeWert = eingabeWert * -1; // berechnet den Betrag negativer Zahlen
+
+            // filtert die eingegebenen Werte und fügt diese zur Ausgabe hinzu
+            if (eingabeWert < 0) {
+                eingabeWert *= -1; // berechnet den Betrag negativer Zahlen
                 ausgabe = ausgabe * 10 + eingabeWert; // fügt den Eingabewert zur Ausgabe hinzu
                 System.out.println("Output: " + ausgabe); // gibt die Ausgabe nach jeder Eingabe aus
-
             }
-            else if (eingabeWert == 0 && (letzteEingabe != 0 && letztenZweiWerte != 0)) { // fasst aufeinander folgende Nullen zusammen
+
+            if (eingabeWert == 0 && (letzteEingabe != 0 && letztenZweiWerte != 0)) { // fasst aufeinander folgende Nullen zusammen
                 ausgabe = ausgabe * 10 + eingabeWert; // fügt den Eingabewert zur Ausgabe hinzu
+                System.out.println("Output: " + ausgabe); // gibt die Ausgabe nach jeder Eingabe aus
+            }
+
+            if (ausgabe == 0 && eingabeWert == 0) {
                 System.out.println("Output: " + ausgabe); // gibt die Ausgabe nach jeder Eingabe aus
             }
 
