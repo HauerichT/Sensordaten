@@ -7,10 +7,10 @@ public class Sensordaten {
 
         Scanner sc = new Scanner(System.in); // neues Scanner-Objekt
 
-        System.out.println("Geben Sie einen Messwert ein.");
+        System.out.println("Geben Sie Messwerte ein:");
 
         int einsCounter = 0; // Zähler für die Endbedingung 1,1,1
-        int eingabeWert = 0; // Variable zum Speichern der aktuellen Eingabe
+        int eingabeWert; // Variable zum Speichern der aktuellen Eingabe
         int nullCounter = 0; // Zähler für die eingegebenen Nullen
 
         // wird ausgeführt bis die Folge 1,1,1 eingegeben wird
@@ -26,7 +26,7 @@ public class Sensordaten {
                 einsCounter = 0; // einsCounter wird wieder auf 0 gesetzt, wenn Eingabe keine 1
             }
 
-            // filtert die eingegebenen Werte und fügt diese zur Ausgabe hinzu
+            // Filterung der eingegebenen Werte
             if (eingabeWert < 0) {
                 nullCounter = 0; // setzt den nullCounter auf 0
                 einsCounter = 0; // setzt den einsCounter auf 0
@@ -36,7 +36,7 @@ public class Sensordaten {
 
             // prüft, ob eine Null eingegeben wurde
             if (eingabeWert == 0 && nullCounter == 0) {
-                System.out.println("Output: 0");
+                System.out.println("Output: " + eingabeWert);
                 nullCounter++; // erhöht den nullCounter um 1
             }
         }
