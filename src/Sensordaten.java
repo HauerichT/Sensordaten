@@ -34,7 +34,7 @@ public class Sensordaten {
                 System.out.println("Output: " + eingabeWert); // gibt den gefilterten Wert aus
             }
 
-            // prüft, ob eine Null eingegeben wurde
+            // prüft, ob eine Null eingegeben wurde und filtert diese
             if (eingabeWert == 0 && nullCounter == 0) {
                 System.out.println("Output: " + eingabeWert);
                 nullCounter++; // erhöht den nullCounter um 1
